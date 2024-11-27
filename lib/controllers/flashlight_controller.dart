@@ -3,6 +3,7 @@ import 'package:torch_light/torch_light.dart';
 
 class FlashlightController extends ChangeNotifier {
   bool _isFlashlightOn = false;
+  String error = '';
 
   bool get isFlashlightOn => _isFlashlightOn;
 
@@ -17,7 +18,9 @@ class FlashlightController extends ChangeNotifier {
       notifyListeners();
     } catch (e) {
       // Handle devices without flashlight or errors
-      print('Error toggling flashlight: $e');
+      error = "Something went Wrong: $e";
+      SnackBar(content: Text(error));
+      notifyListeners();
     }
   }
 }

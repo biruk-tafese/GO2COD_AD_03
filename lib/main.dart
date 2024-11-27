@@ -9,7 +9,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (_) => FlashlightController()),
       ],
-      child: FlashlightApp(),
+      child: const FlashlightApp(),
     ),
   );
 }
