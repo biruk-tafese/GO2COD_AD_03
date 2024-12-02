@@ -4,7 +4,7 @@ import '../controllers/flashlight_controller.dart';
 import '../utils/permissions.dart';
 
 class FlashlightScreen extends StatelessWidget {
-  const FlashlightScreen({super.key});
+  const FlashlightScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +42,13 @@ class FlashlightScreen extends StatelessWidget {
                           : Colors.grey,
                       size: 100,
                     ),
-                    Text(controller.isFlashlightOn ? 'ON' : 'OFF',
-                        style: const TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold)),
+                    Text(
+                      controller.isFlashlightOn ? 'ON' : 'OFF',
+                      style: const TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 20),
@@ -55,17 +59,12 @@ class FlashlightScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(40),
                     backgroundColor: const Color.fromARGB(255, 0, 17, 255),
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        controller.isFlashlightOn
-                            ? Icons.flash_off_rounded
-                            : Icons.flash_on_rounded,
-                        color: Colors.white,
-                        size: 30,
-                      ),
-                    ],
+                  child: Icon(
+                    controller.isFlashlightOn
+                        ? Icons.flash_off_rounded
+                        : Icons.flash_on_rounded,
+                    color: Colors.white,
+                    size: 30,
                   ),
                 ),
               ],

@@ -1,6 +1,6 @@
+import 'package:flashlightapp/screens/flashlight_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'screens/flashlight_screen.dart';
 import 'controllers/flashlight_controller.dart';
 
 void main() {
